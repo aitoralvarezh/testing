@@ -13,7 +13,7 @@ interface Staff  {
 }
 
 const doctor = {
-    name :'Martin',
+    name :'Martina',
     email : 'MartinNew@gmail.com',
     role : Role.Doctor,
     
