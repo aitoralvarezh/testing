@@ -15,7 +15,7 @@ interface Staff  {
 const doctor = {
     name :'Martin',
     email : 'MartinNewEmail@gmail.com',
-    role : Role.Doctor,
+    role : Role.Nurse,
     
 }
 
