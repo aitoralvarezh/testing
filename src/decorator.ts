@@ -21,16 +21,31 @@ class Castles implements ApiEndpoint {
     get() {
         return this.castles;
     };
-    post(req : string) {
+    getCastles(@paramDecorator index : number, defaultValue : string) {
+        return this.castles[index] ?? defaultValue;
+    }
+    post(@paramDecorator req : string) {
         this.castles.push(req);
     };
+
 };
+
+function paramDecorator(target: any, key: string, index: number) {
+    console.log('Este es el target: ',target);
+    console.log('Este es el key: ',key);
+    console.log('Este es el index: ',index);
+    
+    
+    
+}
 
 function registerEndpoint(target : any){
     const className = target.name;
     const endpointPath = '/' + className.toLowerCase();
     httpServer[endpointPath] = new target();
 };
+
+
 /* 
 registerEndpoint(Families);  ############ NO ES NECESARIO SI EL EXPERIMENTAL ############
 registerEndpoint(Castles);   ############        DECORATION ES TRUE          ############
